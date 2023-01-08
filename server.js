@@ -27,12 +27,12 @@ firebase.initializeApp(firebaseConfig)
 
 // Crie uma rota para a raiz da aplicação
 app.get('/', async (req, res) => {
-  res.render('success', { nome: " " });
+  res.send("porra");
 });
 app.post('/', async(req, res) => {
   const nome = req.body.nome;
   let dados = await auxiliar.apiCnpj(nome);
-  res.render('success', { nome: dados[0] });
+  res.send('success' + dados[0] );
  
 });
 
